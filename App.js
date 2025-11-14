@@ -1,4 +1,4 @@
-import {ScrollView,Text, Button, Alert} from 'react-native';
+import {ScrollView, Text, Button, Alert, StyleSheet} from 'react-native';
 import React, {useState} from 'react';
 import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 import Dog from './components/Dogs';
@@ -23,11 +23,10 @@ const AllDog = () => {
     };
     return (
         <ScrollView>
-            <Text style={{fontSize:30, fontWeight:'bold'}}>
+            <Text style={styles.text}>
                 <FontAwesome6 name="dog" size={30} color="peru"/>
                 {' '}
                  Guess The Dog Breed!
-                {"\n"}
             </Text>
                 <Dog pictures={require('./img/golden retriever.jpeg')}
                      selected={ans1}
@@ -51,4 +50,15 @@ const AllDog = () => {
         </ScrollView>
     )
 }
+
+const styles = StyleSheet.create({
+    text: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        textAlign: 'center',
+        fontStyle: 'italic',
+        textAlignVertical: 'center',
+    },
+});
+
 export default AllDog
